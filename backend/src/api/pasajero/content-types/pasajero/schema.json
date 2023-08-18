@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pasajeros",
+  "info": {
+    "singularName": "pasajero",
+    "pluralName": "pasajeros",
+    "displayName": "Pasajero",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nombre": {
+      "type": "string"
+    },
+    "Apellido": {
+      "type": "string"
+    },
+    "FechaNacimiento": {
+      "type": "date"
+    },
+    "Documento": {
+      "type": "string",
+      "unique": true
+    },
+    "viaje": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::viaje.viaje",
+      "inversedBy": "pasajeros"
+    }
+  }
+}

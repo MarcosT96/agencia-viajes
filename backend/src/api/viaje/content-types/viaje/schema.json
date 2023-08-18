@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "viajes",
+  "info": {
+    "singularName": "viaje",
+    "pluralName": "viajes",
+    "displayName": "Viaje",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Destino": {
+      "type": "string"
+    },
+    "FechaSalida": {
+      "type": "date"
+    },
+    "FechaRegreso": {
+      "type": "date"
+    },
+    "CantidadPasajeros": {
+      "type": "integer"
+    },
+    "DetallesViaje": {
+      "type": "richtext"
+    },
+    "pasajeros": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pasajero.pasajero",
+      "mappedBy": "viaje"
+    }
+  }
+}
